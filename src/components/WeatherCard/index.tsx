@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Text, View } from "react-native";
 import { useTheme } from "../../theme/ThemeContext";
 import { createWeatherCardStyle } from "./style";
@@ -30,4 +30,4 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ celsius, date, description })
         </View>
     )
 }
-export default WeatherCard;
+export default memo(WeatherCard);

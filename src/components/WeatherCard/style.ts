@@ -1,16 +1,16 @@
 import { StyleSheet } from "react-native";
 import { lightTheme } from "../../theme/light";
 import { Typography } from "../../styles/typography";
-import { moderateScale } from "react-native-size-matters";
+import { moderateScale, scale, verticalScale } from "react-native-size-matters";
 
 
 export const createWeatherCardStyle = (theme = lightTheme) =>{
     return StyleSheet.create({
        container:{
-            paddingVertical: theme.spacing.xl,
-            paddingHorizontal: theme.spacing.lg,
+            paddingVertical: verticalScale(theme.spacing.xl),
+            paddingHorizontal: scale(theme.spacing.lg),
             backgroundColor: theme.colors.surface,
-            marginTop: theme.spacing.xl,
+            marginTop: verticalScale(theme.spacing.base),
             borderRadius: moderateScale(30)
        },
        date:{
@@ -20,12 +20,12 @@ export const createWeatherCardStyle = (theme = lightTheme) =>{
        description:{
           ...Typography.body,
           color: theme.colors.textTertiary,
-          marginTop: theme.spacing.xs
+          marginTop: verticalScale(theme.spacing.xs)
        },
        celsius:{
           ...Typography.h1,
           color: theme.colors.textPrimary,
-          marginTop: theme.spacing.sm
+          marginTop: verticalScale(theme.spacing.sm)
        }
     })
 }

@@ -4,6 +4,7 @@ import { useTheme } from '../theme/ThemeContext';
 import { AppTheme } from '../theme/theme.type';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { layout } from '../styles/layout';
+import { scale } from 'react-native-size-matters';
 
 type ContainerProps = {
   children: React.ReactNode;
@@ -22,7 +23,7 @@ const getStyles = (theme: AppTheme) =>
     container: {
       ...layout.full,
       backgroundColor: theme.colors.background,
-      paddingHorizontal: theme.spacing.lg,
+      paddingHorizontal: scale(theme.spacing.base),
     },
   });
 

@@ -14,6 +14,7 @@ export interface AppTheme {
         xs: number,
         sm: number,
         md: number,
+        base: number,
         lg: number,
         xl: number,
     },
