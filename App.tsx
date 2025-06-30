@@ -10,11 +10,10 @@ function App() {
   return (
     <ThemeProvider>
       <Provider store={store}>
-        <NavigationContainer>
-          <AppNavigator />
+         <NavigationContainer>
+            <AppNavigator/>
         </NavigationContainer>
       </Provider>
-
     </ThemeProvider>
 
   );

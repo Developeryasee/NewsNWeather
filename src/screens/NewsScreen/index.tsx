@@ -11,7 +11,7 @@ import { useTheme } from "../../theme/ThemeContext";
 import { fetchNewsList } from "../../store/slices/newsSlices";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { Article } from "../../types/news.type";
-import { scale, verticalScale } from "react-native-size-matters";
+import { scale } from "react-native-size-matters";
 import { layout } from "../../styles/layout";
 import { Typography } from "../../styles/typography";
 

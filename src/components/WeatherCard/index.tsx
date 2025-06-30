@@ -20,7 +20,9 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ celsius, date, description })
             <View>
                 <Text style={styles.date}>{date}</Text>
                 <Text style={styles.description}>{description}</Text>
-                <Text style={styles.celsius}>{`${celsius}°C`}</Text>
+                {celsius && (
+                    <Text style={styles.celsius}>{`${celsius}°C`}</Text>
+                )}
             </View>
             <SvgIcon
                 icon={theme.mode === "dark" ? BigCloudDark : BigCloudLight}
