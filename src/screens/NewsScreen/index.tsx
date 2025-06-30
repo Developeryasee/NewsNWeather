@@ -14,6 +14,7 @@ import { Article } from "../../types/news.type";
 import { scale } from "react-native-size-matters";
 import { layout } from "../../styles/layout";
 import { Typography } from "../../styles/typography";
+import ErrorState from "../../components/ErrorState";
 
 type WeatherScreenProps = NativeStackScreenProps<RootStackParamList, "News">
 const NewsScreen: React.FC<WeatherScreenProps> = ({ navigation }) => {
@@ -53,9 +54,9 @@ const NewsScreen: React.FC<WeatherScreenProps> = ({ navigation }) => {
             )
         }
 
-    }, [fromCache,theme])
+    }, [fromCache, theme])
     useEffect(() => {
-       dispatch(fetchNewsList({ isRefresh: false }));
+        dispatch(fetchNewsList({ isRefresh: false }));
     }, [])
 
     return (
@@ -64,15 +65,20 @@ const NewsScreen: React.FC<WeatherScreenProps> = ({ navigation }) => {
             {
                 loading ?
                     <AppLoader color={theme.colors.textPrimary} size="large" /> :
-                    <FlatList
-                        data={newslist}
-                        keyExtractor={keyExtractor}
-                        renderItem={renderItem}
-                        onRefresh={onRefresh}
-                        refreshing={refreshing}
-                        ListHeaderComponent={ListHeaderComponent}
-                        stickyHeaderIndices={fromCache?[0]:undefined}
-                    />
+                    error ? <ErrorState error={error} /> :
+                        <FlatList
+                            data={newslist}
+                            keyExtractor={keyExtractor}
+                            renderItem={renderItem}
+                            onRefresh={onRefresh}
+                            refreshing={refreshing}
+                            ListHeaderComponent={ListHeaderComponent}
+                            stickyHeaderIndices={fromCache ? [0] : undefined}
+                            initialNumToRender={10}
+                            maxToRenderPerBatch={10}
+                            updateCellsBatchingPeriod={50}
+                            windowSize={5}
+                        />
             }
         </Container>
     )

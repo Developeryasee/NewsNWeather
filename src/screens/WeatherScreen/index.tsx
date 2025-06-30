@@ -133,8 +133,6 @@ const WeatherScreen: React.FC<WeatherScreenProps> = ({ navigation }) => {
                             <RefreshControl
                                 refreshing={refreshing}
                                 onRefresh={onRefresh}
-                                colors={[theme.colors.textPrimary]}
-                                tintColor={theme.colors.textPrimary}
                             />
                         }
                     >
