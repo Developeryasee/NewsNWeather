@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { Image, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import type { ForecastSection as ForecastSectionType } from "../../utils/groupForecastData";
 import { useTheme } from "../../theme/ThemeContext";
 import { createForecastSectionStyle } from "./style";

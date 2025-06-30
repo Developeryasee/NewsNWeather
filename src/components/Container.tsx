@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, ViewStyle } from 'react-native';
+import {StyleSheet, ViewStyle } from 'react-native';
 import { useTheme } from '../theme/ThemeContext';
 import { AppTheme } from '../theme/theme.type';
 import { SafeAreaView } from 'react-native-safe-area-context';
