@@ -43,7 +43,7 @@ export const fetchNewsList = createAsyncThunk('news/fetchNewsList', async ({ isR
                 fromCache: false,
             };
         } else {
-            return rejectWithValue(result.error || 'Failed to fetch speaker lists');
+            return rejectWithValue(result.error || 'Failed to fetch news lists');
         }
     } catch (error: any) {
         console.log(error);
