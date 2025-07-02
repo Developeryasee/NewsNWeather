@@ -76,7 +76,7 @@ const newsSlice = createSlice({
             .addCase(fetchNewsList.rejected, (state, action) => {
                 state.loading = false;
                 state.refreshing = false;
-                state.error = action.payload as string || 'Failed to fetch polls lists';
+                state.error = action.payload as string || 'Failed to fetch news lists';
             })
     }
 })
